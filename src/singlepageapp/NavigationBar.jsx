@@ -10,21 +10,21 @@ function NavigationBar() {
       <Container>
         <Navbar.Brand href="#home" className='fw-bold'>Watchlist</Navbar.Brand>
         <Nav>
-          <Nav.Link>
+          {/* <Nav.Link>
           <Link style={{textDecoration :"none", color:"black"}} to={"/home"}>Home</Link>
-          </Nav.Link>
+          </Nav.Link> */}
         </Nav>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link href="#home">
-            <Link style={{textDecoration :"none", color:"black"}} to={"/adventure"}>Adventure</Link>
+            <Link style={{textDecoration :"none", color:"black"}} to={"/adventure"} className='fw-bold'>Adventure</Link>
             </Nav.Link>
             <Nav.Link href="#animation">
-            <Link style={{textDecoration :"none", color:"black"}} to={"/animation"}>Animation</Link>
+            <Link style={{textDecoration :"none", color:"black"}} to={"/animation"} className='fw-bold'>Animation</Link>
             </Nav.Link>
             <Nav.Link href="#comedy">
-            <Link style={{textDecoration :"none", color:"black"}} to={"/comedy"}>Comedy</Link>
+            <Link style={{textDecoration :"none", color:"black"}} to={"/comedy"} className='fw-bold'>Comedy</Link>
               </Nav.Link>            
           </Nav>
         </Navbar.Collapse>

@@ -14,9 +14,10 @@ function App() {
     <div>
     <BrowserRouter>
         <NavigationBar />
-        {/* <Home /> */}
+
+        <Home url={Adventure_movies} />
         <Routes>
-          <Route path="/home" element={<Home  url={Adventure_movies}/>}/>
+          {/* <Route path="/home" element={<Home  />}/> */}
           {/* <Route path="/adventure" element={<AdventureMovies/>}/>
           <Route path='/animation' element={<AnimationMovies/>}/>
           <Route path='/comedy' element={<ComedyMovies />}/>   */}

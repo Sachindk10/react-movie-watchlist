@@ -37,32 +37,43 @@ const Home = ({url}) => {
     return <h2>{error}</h2>;
   }
   return (
-    <div style={{ position: 'relative', height: '100vh', display: 'flex', 
-      justifyContent: 'center',alignItems: 'center'}}>
-      {currentMovie && (
-        <>
-          <img
-            src={`https://image.tmdb.org/t/p/w500/${currentMovie.poster_path}`} 
-            alt={currentMovie.title}
-            style={{
-              position: 'absolute',
-              width: '100%',
-              height: '100%',
-              // maxHeight: '100vh',
-              objectFit: 'cover',
-              zIndex: -1,
-            }}
-          />
-          <div className='d-flex justify-content-center'>
-            <h1 style={{ color: 'white' }}>
-              {currentMovie.title}
-            </h1>
-           
-          </div>
-        </>
-      )}
-    </div>
+  
 
+    <div
+      style={{
+        position: "relative",
+        height: "100vh",
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundImage: `url(https://image.tmdb.org/t/p/original/${currentMovie.poster_path})`,
+        backgroundSize: "100% 100%",
+        backgroundPosition: "center top",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* Dark Overlay */}
+      <div
+        style={{
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          background: "linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9))",
+          zIndex: 0,
+        }}
+      ></div>   
+
+      {/* Movie Title & Button */}
+      <div className="text-center" style={{ position: "relative", zIndex: 1 }}>
+        <h1 style={{ color: "white", fontSize: "3rem", fontWeight: "bold" }}>
+          {currentMovie.title}
+        </h1>
+        <Button variant="danger" as={Link} to={`/movie/${currentMovie.id}`}>
+          Watch Now
+        </Button>
+      </div>
+    </div>
  
 
 

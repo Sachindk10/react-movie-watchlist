@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Card, Col, Container, Image, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Image, Row } from "react-bootstrap";
 
 const PropsMovies = ({ url }) => {
   const [movies, setMovies] = useState([]);
@@ -54,6 +54,7 @@ const PropsMovies = ({ url }) => {
                     <Card.Text href="#">
                       Release Date: {item.release_date}
                     </Card.Text>
+                    
                   </Card.Body>
                 </Card>
               </Col>

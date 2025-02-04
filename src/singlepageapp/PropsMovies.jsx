@@ -1,11 +1,18 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button, Card, Col, Container, Image, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import MovieDetailsPage from "./MovieDetailsPage";
 
-const PropsMovies = ({ url }) => {
+export const movieContext = useContext();
+
+const PropsMovies = ({ url}) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+
+
   useEffect(() => {
     axios
       .get(url)
@@ -49,19 +56,21 @@ const PropsMovies = ({ url }) => {
                         : item.overview}
                     </Card.Text>
                   </Card.Body>
-
-                  <Card.Body>
-                    <Card.Text href="#">
-                      Release Date: {item.release_date}
-                    </Card.Text>
-                    
-                  </Card.Body>
+                  <div className="d-flex justify-content-center">
+                  <Button variant="danger" as={Link} to={"/details"}>
+                View Details
+              </Button>
+                  </div>
                 </Card>
               </Col>
             );
           })}
         </Row>
       </Container>
+
+      <movieContext.Provider value={{movies}}>
+          {children}
+      </movieContext.Provider>
     </div>
   );
 };

@@ -7,6 +7,7 @@ import Home from './singlepageapp/Home'
 
 import PropsMovies from './singlepageapp/PropsMovies'
 import { Adventure_movies, Animation_movies, Comedy_movies } from './singlepageapp/url'
+import MovieDetailsPage from './singlepageapp/MovieDetailsPage';
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
     <BrowserRouter>
         <NavigationBar />
 
-        <Home url={Adventure_movies} />
+        <Home url={Animation_movies} />
         <Routes>
           {/* <Route path="/home" element={<Home  />}/> */}
           {/* <Route path="/adventure" element={<AdventureMovies/>}/>
@@ -25,6 +26,7 @@ function App() {
           <Route path='/adventure' element={<PropsMovies url={Adventure_movies}/>} />
           <Route path='/animation' element={<PropsMovies url= {Animation_movies}/>} />
           <Route path='/comedy' element={<PropsMovies url= {Comedy_movies}/>} />
+          <Route path='/details' element={<MovieDetailsPage />}/>
         </Routes>
       </BrowserRouter>
       </div>

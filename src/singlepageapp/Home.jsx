@@ -69,7 +69,7 @@ const Home = ({url}) => {
         <h1 style={{ color: "white", fontSize: "3rem", fontWeight: "bold" }}>
           {currentMovie.title}
         </h1>
-        <Button variant="danger" as={Link} to={`/movie/${currentMovie.id}`}>
+        <Button variant="danger" as={Link} to={"/details"}>
           Watch Now
         </Button>
       </div>

@@ -3,20 +3,29 @@ import React, { useContext, useEffect, useState } from "react";
 import { Button, Card, Col, Container, Image, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import MovieDetailsPage from "./MovieDetailsPage";
+import { MovieContext } from "../App";
 
 
-const PropsMovies = ({ url}) => {
+const PropsMovies = ({ url }) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const {contmovies, setContmovies} = useContext(MovieContext)
+  console.log(contmovies);
 
+  const movieId = (id) => {
+    console.log(id);
+    
+  }
+  
 
   useEffect(() => {
     axios
-      .get(url)
+      .get(url) 
       .then((response) => {
         setMovies(response.data.results);
+        setContmovies(response.data.results);
         console.log("API Response:", response.data.results);
         setLoading(false);
       })
@@ -26,7 +35,12 @@ const PropsMovies = ({ url}) => {
         setError("Failed to load movies.");
         setLoading(false);
       });
-  }, [url]);
+  }, [url, setContmovies]
+);
+
+
+
+
   if (loading) {
     return <h2>Loading...</h2>;
   }
@@ -41,7 +55,7 @@ const PropsMovies = ({ url}) => {
           {movies?.map((item, index) => {
             return (
               <Col key={index} xs={12} sm={6} md={4} lg={3} className="mb-4">
-                <Card className="h-100">
+                <Card className="h-100" onClick={() => movieId(item.id)}> 
                   <Card.Img
                     variant="top"
                     src={`https://image.tmdb.org/t/p/w300/${item?.poster_path}`}
@@ -56,7 +70,7 @@ const PropsMovies = ({ url}) => {
                     </Card.Text>
                   </Card.Body>
                   <div className="d-flex justify-content-center">
-                  <Button variant="danger" as={Link} to={"/details"}>
+                  <Button variant="danger" as={Link} to={"/details"} >
                 View Details
               </Button>
                   </div>

@@ -4,7 +4,6 @@ import { Button, Card, Col, Container, Image, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import MovieDetailsPage from "./MovieDetailsPage";
 
-export const movieContext = useContext();
 
 const PropsMovies = ({ url}) => {
   const [movies, setMovies] = useState([]);
@@ -68,9 +67,7 @@ const PropsMovies = ({ url}) => {
         </Row>
       </Container>
 
-      <movieContext.Provider value={{movies}}>
-          {children}
-      </movieContext.Provider>
+
     </div>
   );
 };

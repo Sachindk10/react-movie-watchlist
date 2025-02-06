@@ -12,14 +12,16 @@ import {
   Comedy_movies,
 } from "./singlepageapp/url";
 import MovieDetailsPage from "./singlepageapp/MovieDetailsPage";
+import { use } from "react";
 
 const MovieContext = createContext();
 
 function App() {
-  const [contmovies, setContmovies] = useState();
+  const [contmovies, setContmovies] = useState([]);
+  const [idmovie, setIdmovie] = useState([])
   return (
     <div>
-      <MovieContext.Provider value={{contmovies, setContmovies}}>
+      <MovieContext.Provider value={{contmovies, setContmovies, idmovie, setIdmovie}}>
         <BrowserRouter>
           <NavigationBar />
 

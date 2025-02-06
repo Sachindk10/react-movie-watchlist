@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Carousel, Container, Image } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-
+import { MovieContext } from "../App";
 import  { Adventure_movies }  from './url'
 import axios from 'axios'
 

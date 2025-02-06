@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 
 function NavigationBar() {
   return (
-    <Navbar expand="lg" style={{backgroundColor: "#B8001F"}}>
+    <Navbar expand="lg" style={{backgroundColor: "rgb(250, 50, 10)"}}>
       <Container>
-        <Navbar.Brand href="#home" className='fw-bold'>Watchlist</Navbar.Brand>
+        <Navbar.Brand href="#home" className='fw-bold text-white'>Watchlist</Navbar.Brand>
         <Nav>
           {/* <Nav.Link>
           <Link style={{textDecoration :"none", color:"black"}} to={"/home"}>Home</Link>
@@ -18,13 +18,13 @@ function NavigationBar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link href="#home">
-            <Link style={{textDecoration :"none", color:"black"}} to={"/adventure"} className='fw-bold'>Adventure</Link>
+            <Link style={{textDecoration :"none", color:"black"}} to={"/adventure"} className='fw-bold text-white'>Adventure</Link>
             </Nav.Link>
             <Nav.Link href="#animation">
-            <Link style={{textDecoration :"none", color:"black"}} to={"/animation"} className='fw-bold'>Animation</Link>
+            <Link style={{textDecoration :"none", color:"black"}} to={"/animation"} className='fw-bold text-white'>Animation</Link>
             </Nav.Link>
             <Nav.Link href="#comedy">
-            <Link style={{textDecoration :"none", color:"black"}} to={"/comedy"} className='fw-bold'>Comedy</Link>
+            <Link style={{textDecoration :"none", color:"black"}} to={"/comedy"} className='fw-bold text-white'>Comedy</Link>
               </Nav.Link>            
           </Nav>
         </Navbar.Collapse>

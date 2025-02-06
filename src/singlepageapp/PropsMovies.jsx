@@ -14,10 +14,14 @@ const PropsMovies = ({ url }) => {
   const {contmovies, setContmovies} = useContext(MovieContext)
   console.log(contmovies);
 
+  const {idmovie, setIdmovie} = useContext(MovieContext)
+
   const movieId = (id) => {
     console.log(id);
-    
+    setIdmovie(id);
+       
   }
+
   
 
   useEffect(() => {
@@ -60,6 +64,7 @@ const PropsMovies = ({ url }) => {
                     variant="top"
                     src={`https://image.tmdb.org/t/p/w300/${item?.poster_path}`}
                     className="img-fluid"
+                    style={{height:'24rem'}}
                   />
                   <Card.Body>
                     <Card.Title>{item?.title}</Card.Title>
@@ -69,7 +74,7 @@ const PropsMovies = ({ url }) => {
                         : item.overview}
                     </Card.Text>
                   </Card.Body>
-                  <div className="d-flex justify-content-center">
+                  <div className="d-flex justify-content-center p-3">
                   <Button variant="danger" as={Link} to={"/details"} >
                 View Details
               </Button>

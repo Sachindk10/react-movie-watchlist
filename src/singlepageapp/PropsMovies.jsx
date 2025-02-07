@@ -5,16 +5,14 @@ import { Link } from "react-router-dom";
 import MovieDetailsPage from "./MovieDetailsPage";
 import { MovieContext } from "../App";
 
-
 const PropsMovies = ({ url }) => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const {contmovies, setContmovies} = useContext(MovieContext)
+  const {contmovies, setContmovies, idmovie, setIdmovie} = useContext(MovieContext)
   console.log(contmovies);
 
-  const {idmovie, setIdmovie} = useContext(MovieContext)
 
   const movieId = (id) => {
     console.log(id);
@@ -59,7 +57,7 @@ const PropsMovies = ({ url }) => {
           {movies?.map((item, index) => {
             return (
               <Col key={index} xs={12} sm={6} md={4} lg={3} className="mb-4">
-                <Card className="h-100" onClick={() => movieId(item.id)}> 
+                <Card className="myCard h-100" onClick={() => movieId(item.id)} > 
                   <Card.Img
                     variant="top"
                     src={`https://image.tmdb.org/t/p/w300/${item?.poster_path}`}

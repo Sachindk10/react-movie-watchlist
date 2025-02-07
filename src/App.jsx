@@ -19,13 +19,19 @@ const MovieContext = createContext();
 function App() {
   const [contmovies, setContmovies] = useState([]);
   const [idmovie, setIdmovie] = useState([])
+
+  const [viewHome, setViewHome] = useState(true)
   return (
     <div>
       <MovieContext.Provider value={{contmovies, setContmovies, idmovie, setIdmovie}}>
         <BrowserRouter>
-          <NavigationBar />
-
-          <Home url={Animation_movies} />
+        {viewHome? (
+        <>
+        <NavigationBar />
+        <Home url={Animation_movies} />
+        </>) : null
+        }
+          
           <Routes>
             {/* <Route path="/home" element={<Home  />}/> */}
             {/* <Route path="/adventure" element={<AdventureMovies/>}/>
@@ -44,7 +50,7 @@ function App() {
               path="/comedy"
               element={<PropsMovies url={Comedy_movies} />}
             />
-            <Route path="/details" element={<MovieDetailsPage />} />
+            <Route path="/details" element={<MovieDetailsPage setViewHome = {setViewHome}/>} />
           </Routes>
         </BrowserRouter>
       </MovieContext.Provider>

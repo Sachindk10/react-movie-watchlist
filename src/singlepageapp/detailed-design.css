@@ -1,0 +1,52 @@
+.movie-details-design {
+    /* background: linear-gradient(to bottom, rgb(221, 211, 211), rgba(221, 102, 102, 0.9)), no-repeat center center fixed; */
+    background-size: contain;
+    min-height: 100vh;
+  }
+
+/* .blurred-background{
+  background-size: contain;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px); /* Adjust blur intensity */
+  z-index: -1;
+
+}
+
+.movie-details-content {
+  position: relative;
+  z-index: 1; /* Ensure content is above the blurred background */
+  color: #fff;
+  padding: 20px;
+  width: 100%;
+} */
+  
+  .image-design {
+    border-radius: 10px 0 0 10px;
+  }
+  
+  .card {
+    border-radius: 15px;
+  }
+  
+  .card-title {
+    color: #ff3300; /* Gold color for the title */
+  }
+  
+  .list-group-item {
+    border: none; /* Remove borders for a cleaner look */
+  }
+  
+  button {
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }

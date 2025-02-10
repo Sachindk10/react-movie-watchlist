@@ -13,6 +13,7 @@ import {
 } from "./singlepageapp/url";
 import MovieDetailsPage from "./singlepageapp/MovieDetailsPage";
 import { use } from "react";
+import DetailedMovie from "./singlepageapp/DetailedMovie";
 
 const MovieContext = createContext();
 
@@ -50,7 +51,8 @@ function App() {
               path="/comedy"
               element={<PropsMovies url={Comedy_movies} />}
             />
-            <Route path="/details" element={<MovieDetailsPage setViewHome = {setViewHome}/>} />
+            {/* <Route path="/details" element={<MovieDetailsPage setViewHome = {setViewHome}/>} /> */}
+            <Route path="/details" element={<DetailedMovie setViewHome = {setViewHome}/>} />
           </Routes>
         </BrowserRouter>
       </MovieContext.Provider>

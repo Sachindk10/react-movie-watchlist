@@ -1,0 +1,11 @@
+.movie-details-design {
+    /* background: linear-gradient(120deg, rgb(76, 32, 236), rgb(171, 140, 245)), */
+    background-color: rgb(61, 13, 80);
+    height: 100vh;
+    
+      
+}
+.image-design {
+    height: 30rem;
+    width: 45rem;
+}
